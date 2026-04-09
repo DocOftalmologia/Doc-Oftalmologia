@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOC Oftalmologia - Dra. Marisa De Mio</title>
+    <style>
+        :root {
+            --primary-color: #005f73;
+            --secondary-color: #0a9396;
+            --light-bg: #e9d8a6;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--text-color); font-weight: 500;}
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 4rem 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            color: var(--text-color);
+            flex: 0.8;
+            min-width: 300px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        input, select, button {
+            width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;
+        }
+        button { background-color: #25D366; color: white; border: none; font-weight: bold; cursor: pointer; font-size: 1.1rem; }
+        button:hover { background-color: #128C7E; }
+        section { padding: 4rem 5%; }
+        .bg-light { background-color: #f9f9f9; }
+        h2 { color: var(--primary-color); text-align: center; margin-bottom: 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: var(--white); padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center; }
+        .about-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; }
+        .about-text { flex: 2; min-width: 300px; }
+        .footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 2rem 5%; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">DOC Oftalmologia</div>
+        <nav>
+            <a href="#especialidades">Especialidades</a>
+            <a href="#convenios">Convênios</a>
+            <a href="#blog">Blog</a>
+            <a href="#sobre">Dra. Marisa</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Cuidado especializado com a sua visão</h1>
+            <p>Mais de 30 anos de experiência clínica e cirúrgica.</p>
+        </div>
+        <div class="hero-form">
+            <h3 style="margin-top:0;">Agendar pelo WhatsApp</h3>
+            <form action="https://wa.me/554133193913" target="_blank">
+                <input type="text" placeholder="Nome Completo" required>
+                <select required>
+                    <option value="" disabled selected>Especialidade</option>
+                    <option value="oftalmologia">Oftalmologia Geral</option>
+                    <option value="pediatria">Oftalmologia Pediátrica</option>
+                </select>
+                <select required>
+                    <option value="" disabled selected>Convênio</option>
+                    <option value="unimed">Unimed</option>
+                    <option value="particular">Particular</option>
+                    <option value="outros">Outros</option>
+                </select>
+                <button type="submit">Agendar via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="bg-light" id="especialidades">
+        <h2>O Que Tratamos</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Oftalmologia Pediátrica</h3>
+                <p>Avaliação e tratamento da visão em bebês e crianças, com abordagem gentil e especializada.</p>
+            </div>
+            <div class="card">
+                <h3>Estrabismo</h3>
+                <p>Diagnóstico e tratamento do desvio ocular em crianças e adultos, incluindo cirurgia.</p>
+            </div>
+            <div class="card">
+                <h3>Catarata</h3>
+                <p>Cirurgia de catarata com tecnologia moderna e alta taxa de sucesso em adultos e crianças.</p>
+            </div>
+            <div class="card">
+                <h3>Cirurgia Refrativa</h3>
+                <p>Correção definitiva de miopia, hipermetropia e astigmatismo. Liberdade dos óculos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="about-flex">
+            <div class="about-text">
+                <h2>Quem é Dra. Marisa De Mio</h2>
+                <p>Oftalmologista com 30 anos de prática clínica e cirúrgica, especializada no cuidado da visão de crianças e adultos.</p>
+                <ul>
+                    <li>Mestre pela UNIFESP, com residência na UFPR.</li>
+                    <li>Por 23 anos chefiou o setor de Oftalmologia Pediátrica do Hospital Angelina Caron.</li>
+                    <li>Especialista em Estrabismo e Cirurgia Refrativa.</li>
+                </ul>
+                <p><strong>CRM-PR 15318 | RQE 11521</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light" id="convenios">
+        <h2>Planos Aceitos</h2>
+        <p style="text-align: center;">Sua saúde visual acessível. Atendemos os seguintes convênios:</p>
+        <div class="grid" style="text-align: center; font-weight: bold; margin-top: 20px;">
+            <p>Unimed</p><p>Bradesco Saúde</p><p>SulAmérica</p><p>Amil</p>
+            <p>Porto Seguro</p><p>Fusex</p><p>GEAP</p><p>Cassi</p><p>Pamed</p><p>Particular</p>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Informação e Saúde (Blog)</h2>
+        <div class="grid">
+            <div class="card">
+                <h4>Quando levar seu filho ao oftalmologista?</h4>
+                <p>A primeira consulta deve acontecer antes dos 4 anos. Saiba os sinais de alerta.</p>
+            </div>
+            <div class="card">
+                <h4>Estrabismo tem cura?</h4>
+                <p>O tratamento precoce é fundamental. Entenda as opções e quando a cirurgia é indicada.</p>
+            </div>
+            <div class="card">
+                <h4>LASIK ou PRK: qual a diferença?</h4>
+                <p>Entenda as duas técnicas e descubra qual é mais adequada ao seu perfil.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h3>Onde Estamos</h3>
+                <p>Av. Visconde de Guarapuava, 4628, Sala 309</p>
+                <p>Batel - Curitiba - PR</p>
+            </div>
+            <div>
+                <h3>Contato</h3>
+                <p>Telefone / WhatsApp:</p>
+                <p>(41) 3319-3913</p>
+            </div>
+            <div>
+                <h3>Horários</h3>
+                <p>Segunda a Sexta: 08h - 18h</p>
+                <p>Sábado: 08h - 12h</p>
+                <p>Domingo: Fechado</p>
+            </div>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">&copy; 2026 DOC Oftalmologia. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
