@@ -87,21 +87,27 @@
         </div>
         <div class="hero-form">
             <h3 style="margin-top:0;">Agendar pelo WhatsApp</h3>
-            <form action="https://wa.me/554133193913" target="_blank">
-                <input type="text" placeholder="Nome Completo" required>
-                <select required>
+            <div>
+                <input type="text" id="nome" placeholder="Nome Completo" required>
+                <select id="especialidade" required>
                     <option value="" disabled selected>Especialidade</option>
-                    <option value="oftalmologia">Oftalmologia Geral</option>
-                    <option value="pediatria">Oftalmologia Pediátrica</option>
+                    <option value="Oftalmologia Geral">Oftalmologia Geral</option>
+                    <option value="Oftalmologia Pediátrica">Oftalmologia Pediátrica</option>
                 </select>
-                <select required>
+                <select id="convenio" required>
                     <option value="" disabled selected>Convênio</option>
-                    <option value="unimed">Unimed</option>
-                    <option value="particular">Particular</option>
-                    <option value="outros">Outros</option>
+                    <option value="Unimed">Unimed</option>
+                    <option value="Particular">Particular</option>
+                    <option value="Outros">Outros</option>
                 </select>
-                <button type="submit">Agendar via WhatsApp</button>
-            </form>
+                <div style="display:flex; align-items:flex-start; gap:8px; margin-bottom:15px;">
+                    <input type="checkbox" id="lgpd" style="width:auto; margin:3px 0 0 0;">
+                    <label for="lgpd" style="font-size:0.85rem; color:#555;">
+                        Li e concordo com a <a href="#" onclick="abrirPrivacidade(event)" style="color:var(--primary-color);">Política de Privacidade</a>. Autorizo o uso dos meus dados para fins de agendamento.
+                    </label>
+                </div>
+                <button type="button" onclick="agendarWhatsApp()">Agendar via WhatsApp</button>
+            </div>
         </div>
     </div>
 
@@ -118,11 +124,11 @@
             </div>
             <div class="card">
                 <h3>Catarata</h3>
-                <p>Cirurgia de catarata com tecnologia moderna e alta taxa de sucesso em adultos e crianças.</p>
+                <p>Cirurgia de catarata com tecnologia moderna em adultos e crianças.</p>
             </div>
             <div class="card">
                 <h3>Cirurgia Refrativa</h3>
-                <p>Correção definitiva de miopia, hipermetropia e astigmatismo. Liberdade dos óculos.</p>
+                <p>Tratamento de miopia, hipermetropia e astigmatismo. Avalie com a especialista a melhor opção para o seu caso.</p>
             </div>
         </div>
     </section>
@@ -146,7 +152,7 @@
         <h2>Planos Aceitos</h2>
         <p style="text-align: center;">Sua saúde visual acessível. Atendemos os seguintes convênios:</p>
         <div class="grid" style="text-align: center; font-weight: bold; margin-top: 20px;">
-            <p>Unimed
+            <p>Unimed</p>
         </div>
     </section>
 
@@ -178,7 +184,7 @@
             <div>
                 <h3>Contato</h3>
                 <p>Telefone / WhatsApp:</p>
-                <p> 3319-3913</p>
+                <p><a href="tel:+554133193913" style="color: var(--white);">(41) 3319-3913</a></p>
             </div>
             <div>
                 <h3>Horários</h3>
@@ -187,8 +193,61 @@
                 <p>Domingo: Fechado</p>
             </div>
         </div>
-        <p style="margin-top: 2rem; font-size: 0.9rem;">&copy; 2026 DOC Oftalmologia. Todos os direitos reservados.</p>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">&copy; 2026 DOC Oftalmologia. Todos os direitos reservados. &nbsp;|&nbsp; <a href="#" onclick="abrirPrivacidade(event)" style="color:var(--white);">Política de Privacidade</a></p>
     </footer>
 
+
+<!-- Modal Política de Privacidade -->
+<div id="modalPrivacidade" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:9999; overflow-y:auto;">
+    <div style="background:#fff; max-width:640px; margin:40px auto; border-radius:10px; padding:2rem; position:relative;">
+        <button onclick="document.getElementById('modalPrivacidade').style.display='none'" style="position:absolute; top:1rem; right:1rem; background:#ccc; color:#333; width:auto; padding:4px 12px; font-size:1rem; margin:0;">✕</button>
+        <h2 style="color:var(--primary-color); margin-top:0;">Política de Privacidade</h2>
+        <p><strong>DOC Oftalmologia – Dra. Marisa De Mio | CRM-PR 15318</strong><br>
+        Av. Visconde de Guarapuava, 4628, Sala 309 – Batel, Curitiba-PR<br>
+        Contato: <a href="mailto:contato@docoftalmologia.com.br">contato@docoftalmologia.com.br</a></p>
+
+        <h3>1. Quais dados coletamos</h3>
+        <p>Coletamos nome, telefone, especialidade de interesse e convênio, fornecidos voluntariamente no formulário de agendamento.</p>
+
+        <h3>2. Para que usamos</h3>
+        <p>Os dados são utilizados exclusivamente para responder à sua solicitação de agendamento via WhatsApp. Não compartilhamos suas informações com terceiros para fins comerciais.</p>
+
+        <h3>3. Base legal (LGPD – Lei 13.709/2018)</h3>
+        <p>O tratamento é realizado com base no consentimento do titular (art. 7º, I) e para execução de procedimento preliminar à prestação de serviço de saúde (art. 7º, V).</p>
+
+        <h3>4. Seus direitos</h3>
+        <p>Você pode solicitar confirmação, acesso, correção ou exclusão dos seus dados a qualquer momento pelo e-mail acima.</p>
+
+        <h3>5. Encarregado (DPO)</h3>
+        <p>Responsável pelo tratamento de dados: Dra. Marisa De Mio.<br>
+        Contato: <a href="mailto:contato@docoftalmologia.com.br">contato@docoftalmologia.com.br</a></p>
+
+        <p style="font-size:0.8rem; color:#888;">Última atualização: junho de 2026.</p>
+    </div>
+</div>
+
+<script>
+function abrirPrivacidade(e) {
+    e.preventDefault();
+    document.getElementById('modalPrivacidade').style.display = 'block';
+}
+
+function agendarWhatsApp() {
+    const nome = document.getElementById('nome').value.trim();
+    const especialidade = document.getElementById('especialidade').value;
+    const convenio = document.getElementById('convenio').value;
+    const lgpd = document.getElementById('lgpd').checked;
+    if (!nome || !especialidade || !convenio) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+    }
+    if (!lgpd) {
+        alert('Por favor, aceite a Política de Privacidade para continuar.');
+        return;
+    }
+    const msg = encodeURIComponent(`Olá! Gostaria de agendar uma consulta.\nNome: ${nome}\nEspecialidade: ${especialidade}\nConvênio: ${convenio}`);
+    window.open(`https://wa.me/554133193913?text=${msg}`, '_blank');
+}
+</script>
 </body>
 </html>
