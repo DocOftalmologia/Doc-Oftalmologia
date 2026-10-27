@@ -41,7 +41,23 @@
             justify-content: space-between;
             align-items: center;
         }
-        .hero-text { flex: 1; min-width: 300px; }
+        .hero-text { flex: 1; min-width: 300px; padding-right: 30px; }
+        .hero-photo {
+            display: block;
+            width: 100%;
+            max-width: 460px;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            object-position: 40% 55%;
+            border-radius: 16px;
+            margin-top: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            border: 3px solid rgba(255,255,255,0.85);
+        }
+        @media (max-width: 700px) {
+            .hero-text { padding-right: 0; }
+            .hero-photo { max-width: 100%; }
+        }
         .hero-form {
             background: var(--white);
             padding: 2rem;
@@ -99,6 +115,7 @@
         <div class="hero-text">
             <h1>Cuidado especializado com a sua visão</h1>
             <p>Mais de 30 anos de experiência clínica e cirúrgica.</p>
+            <img class="hero-photo" src="autorefrator.jpg" alt="Dra. Marisa De Mio examinando no biomicroscópio">
         </div>
         <div class="hero-form">
             <h3 style="margin-top:0;">Agendar pelo WhatsApp</h3>
@@ -151,7 +168,7 @@
     <section id="sobre">
         <div class="about-flex">
             <div class="about-photo">
-                <img src="dra-marisa.jpg.jpeg" alt="Dra. Marisa De Mio, oftalmologista" loading="lazy">
+                <img src="dra-marisa.jpg" alt="Dra. Marisa De Mio, oftalmologista" loading="lazy">
             </div>
             <div class="about-text">
                 <h2>Quem é Dra. Marisa De Mio</h2>
