@@ -35,28 +35,32 @@
         .hero {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--white);
-            padding: 4rem 5%;
+            padding: 3.5rem 5% 4rem;
+        }
+        .hero-text h1 { margin: 0 0 0.3rem; }
+        .hero-text p { margin: 0 0 2rem; }
+        .hero-row {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
+            gap: 30px;
+            align-items: stretch;
         }
-        .hero-text { flex: 1; min-width: 300px; padding-right: 30px; }
+        .hero-media { flex: 1; min-width: 300px; position: relative; }
         .hero-photo {
             display: block;
+            position: absolute;
+            inset: 0;
             width: 100%;
-            max-width: 460px;
-            aspect-ratio: 4 / 3;
+            height: 100%;
             object-fit: cover;
             object-position: 40% 55%;
-            border-radius: 16px;
-            margin-top: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             border: 3px solid rgba(255,255,255,0.85);
+            box-sizing: border-box;
         }
         @media (max-width: 700px) {
-            .hero-text { padding-right: 0; }
-            .hero-photo { max-width: 100%; }
+            .hero-photo { position: static; height: auto; aspect-ratio: 4 / 3; }
         }
         .hero-form {
             background: var(--white);
@@ -65,7 +69,7 @@
             color: var(--text-color);
             flex: 0.8;
             min-width: 300px;
-            margin-top: 20px;
+            box-sizing: border-box;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         input, select, button {
@@ -97,6 +101,9 @@
         }
         .footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 2rem 5%; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: left; }
+        @media (max-width: 700px) {
+            .hero-form { flex: 1 1 100%; }
+        }
     </style>
 </head>
 <body>
@@ -115,7 +122,10 @@
         <div class="hero-text">
             <h1>Cuidado especializado com a sua visão</h1>
             <p>Mais de 30 anos de experiência clínica e cirúrgica.</p>
-            <img class="hero-photo" src="autorefrator.jpeg" alt="Dra. Marisa De Mio examinando no biomicroscópio">
+        </div>
+        <div class="hero-row">
+        <div class="hero-media">
+            <img class="hero-photo" src="autorefrator.jpg" alt="Dra. Marisa De Mio examinando no biomicroscópio">
         </div>
         <div class="hero-form">
             <h3 style="margin-top:0;">Agendar pelo WhatsApp</h3>
@@ -140,6 +150,7 @@
                 </div>
                 <button type="button" onclick="agendarWhatsApp()">Agendar via WhatsApp</button>
             </div>
+        </div>
         </div>
     </div>
 
