@@ -62,8 +62,23 @@
         h2 { color: var(--primary-color); text-align: center; margin-bottom: 2rem; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .card { background: var(--white); padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center; }
-        .about-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; }
+        .about-flex { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: center; max-width: 1000px; margin: 0 auto; }
+        .about-photo { flex: 1; min-width: 240px; text-align: center; }
+        .about-photo img {
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-bottom: 4px solid var(--secondary-color);
+        }
         .about-text { flex: 2; min-width: 300px; }
+        .about-text h2 { text-align: left; margin-top: 0; }
+        @media (max-width: 700px) {
+            .about-text h2 { text-align: center; }
+        }
         .footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 2rem 5%; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: left; }
     </style>
@@ -135,6 +150,9 @@
 
     <section id="sobre">
         <div class="about-flex">
+            <div class="about-photo">
+                <img src="dra-marisa.jpg" alt="Dra. Marisa De Mio, oftalmologista" loading="lazy">
+            </div>
             <div class="about-text">
                 <h2>Quem é Dra. Marisa De Mio</h2>
                 <p>Oftalmologista com 30 anos de prática clínica e cirúrgica, especializada no cuidado da visão de crianças e adultos.</p>
